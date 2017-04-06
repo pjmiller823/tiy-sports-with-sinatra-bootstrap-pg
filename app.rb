@@ -24,5 +24,7 @@ get '/' do
   @teams = Team.all.limit(5).offset(page_offset)
   @games = Game.all
 
+  @teams_count = Team.all
+
   erb :home
 end
