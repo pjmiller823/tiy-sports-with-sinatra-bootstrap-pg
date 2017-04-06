@@ -17,7 +17,11 @@ after do
 end
 
 get '/' do
-  @teams = Team.all
+  @number_of_links = Team.all.size / 5
+
+  page = (params["page"] || 1).to_i
+  page_offset = (page - 1) * 5
+  @teams = Team.all.limit(5).offset(page_offset)
   @games = Game.all
 
   erb :home

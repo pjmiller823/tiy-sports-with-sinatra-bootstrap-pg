@@ -175,12 +175,9 @@
                   <span aria-hidden="true">&laquo;</span>
                 </a>
               </li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li class="active"><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">6</a></li>
+              <% @number_of_links.times do |link| %>
+              <li><a href="/?page=<%= link +1 %>"><%= link + 1 %></a></li>
+              <% end %>
               <li>
                 <a href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>
